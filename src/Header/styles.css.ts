@@ -16,5 +16,5 @@ export const headerStyle = style({
   fontSize: '1.2rem',
   fontFamily: vars.typography.sansSerif,
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
 })

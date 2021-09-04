@@ -62,7 +62,7 @@ export function Setlist() {
 
   return (
     <SetlistProvider setlist={data}>
-      <Header />
+      {/* <Header /> */}
       <div className={setlistStyle}>{data ? <SetlistDisplay /> : null}</div>
     </SetlistProvider>
   )
