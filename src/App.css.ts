@@ -1,17 +1,21 @@
 import { createTheme, style } from '@vanilla-extract/css'
 
 export const [themeClass, vars] = createTheme({
-  color: {
-    brand: 'blue',
+  typography: {
+    color: 'hsl(234, 0%, 30%)',
+    lighterColor: 'hsl(234, 0%, 35%)',
+    fontSize: '15px',
+    serif: 'Spectral, Arial, serif',
+    sansSerif: 'Poppins, Helvetica, sans-serif',
   },
-  font: {
-    body: 'arial',
+  colors: {
+    border: 'hsl(234, 0%, 90%);',
+    lightBackground: 'hsl(234, 71%, 95%)',
   },
 })
 
-export const exampleStyle = style({
-  backgroundColor: vars.color.brand,
-  fontFamily: vars.font.body,
-  color: 'white',
+export const appStyle = style({
+  fontFamily: vars.typography.serif,
+  color: vars.typography.color,
   padding: 10,
 })

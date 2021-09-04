@@ -1,13 +1,17 @@
 import React from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { themeClass, exampleStyle } from './App.css.js'
+import { themeClass, appStyle } from './App.css.js'
+import { Setlist } from './Setlist'
 
-interface AppProps {}
+const queryClient = new QueryClient()
 
-export function App({}: AppProps) {
+export function App() {
   return (
-    <div className={`${themeClass}`}>
-      <div className={`${exampleStyle}`}>hello</div>
+    <div className={`${themeClass} ${appStyle}`}>
+      <QueryClientProvider client={queryClient}>
+        <Setlist />
+      </QueryClientProvider>
     </div>
   )
 }
