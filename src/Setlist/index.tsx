@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 
 import { useSetlist, Song } from '../data'
@@ -12,9 +12,9 @@ import {
   rightPager,
   leftPager,
 } from './styles.css.js'
-import { Header } from '../Header'
 import { SetlistProvider, useSetlistControls } from './useSetlistControls'
 import { ChevronLeft, ChevronRight } from './Chevron'
+import { Loader } from '../Loader'
 
 function SetlistDisplay() {
   const {
@@ -59,11 +59,14 @@ function SetlistDisplay() {
 
 export function Setlist() {
   const { data, status } = useSetlist()
+  const isLoading = status === 'loading'
 
   return (
     <SetlistProvider setlist={data}>
-      {/* <Header /> */}
-      <div className={setlistStyle}>{data ? <SetlistDisplay /> : null}</div>
+      <div className={setlistStyle}>
+        <>{data && !isLoading ? <SetlistDisplay /> : null}</>
+        <>{isLoading ? <Loader /> : null}</>
+      </div>
     </SetlistProvider>
   )
 }

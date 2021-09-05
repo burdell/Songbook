@@ -27,7 +27,6 @@ export function useSetlistControls() {
   const hasNext = currentSong && currentIndex < songs.length - 1
   const hasPrevious = currentSong && currentIndex > 0
 
-  console.log('hasNext', hasNext, currentIndex, songs.length)
   return {
     currentSong,
     hasNext,

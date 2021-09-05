@@ -3,13 +3,14 @@ import { style } from '@vanilla-extract/css'
 import { vars } from '../App.css.js'
 
 export const setlistStyle = style({
-  marginTop: '40px',
+  marginTop: '60px',
 })
 
 export const songStyle = style({
   display: 'flex',
   justifyContent: 'center',
-  fontSize: '1.1rem',
+  fontSize: '1rem',
+  lineHeight: 1.4,
 })
 
 export const songHeader = style({
@@ -21,13 +22,13 @@ export const songHeader = style({
   textAlign: 'center',
   position: 'fixed',
   left: 0,
-  // top: '60px',
   top: 0,
   width: '100%',
   margin: '0 auto',
   backgroundColor: 'white',
   fontFamily: vars.typography.sansSerif,
-  overflowX: 'scroll',
+  overflowY: 'scroll',
+  height: '80px',
 })
 
 export const rightPager = style({
@@ -44,10 +45,11 @@ export const songPager = style({
   alignItems: 'center',
   backgroundColor: vars.colors.lightBackground,
   border: `1px solid ${vars.colors.border}`,
-  borderRadius: '50%',
-  padding: '0.5rem',
+  height: '100%',
+  padding: '0.8rem',
   color: vars.typography.lighterColor,
   cursor: 'pointer',
+  borderRadius: '50%',
 })
 
 export const disabledPager = style({
