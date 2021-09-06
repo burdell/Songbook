@@ -30,7 +30,7 @@ export function useSetlist() {
     async () =>
       await fetchSanityData<Setlist>(`
       *[_id == "setlist"][0] {
-        "songList": songList[]->{title, lyrics, "url": url.current}
+        "songList": songList[]->{title, lyrics}
       }
     `),
   )
