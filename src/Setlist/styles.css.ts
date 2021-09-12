@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css'
 import { vars } from '../App.css.js'
 
 export const setlistStyle = style({
-  marginTop: '60px',
+  marginTop: '70px',
 })
 
 export const songStyle = style({

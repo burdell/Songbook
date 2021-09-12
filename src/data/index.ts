@@ -5,7 +5,7 @@ import type { BlockContentProps } from '@sanity/block-content-to-react'
 async function fetchSanityData<DocumentType>(query: string) {
   const sanityResult = await ky
     .get(
-      `https://zw649fyt.api.sanity.io/v2021-06-07/data/query/production?query=${encodeURIComponent(
+      `https://zw649fyt.apicdn.sanity.io/v2021-06-07/data/query/production?query=${encodeURIComponent(
         query,
       )}`,
     )
