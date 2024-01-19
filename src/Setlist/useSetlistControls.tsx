@@ -28,18 +28,6 @@ export function useSetlistControls() {
   const hasPrevious = currentSong && currentIndex > 0
 
   return {
-    currentSong,
-    hasNext,
-    hasPrevious,
-    nextSong: () => {
-      if (hasNext) {
-        setCurrentIndex(currentIndex + 1)
-      }
-    },
-    previousSong: () => {
-      if (hasPrevious) {
-        setCurrentIndex(currentIndex - 1)
-      }
-    },
+    songs,
   }
 }

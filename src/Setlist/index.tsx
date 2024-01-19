@@ -3,56 +3,26 @@ import BlockContent from '@sanity/block-content-to-react'
 
 import { useSetlist, Song } from '../data'
 
-import {
-  setlistStyle,
-  songStyle,
-  songHeader,
-  songPager,
-  disabledPager,
-  rightPager,
-  leftPager,
-} from './styles.css.js'
+import { setlistStyle, songStyle, songTitle } from './styles.css.js'
 import { SetlistProvider, useSetlistControls } from './useSetlistControls'
 import { ChevronLeft, ChevronRight } from './Chevron'
 import { Loader } from '../Loader'
 
 function SetlistDisplay() {
-  const {
-    currentSong,
-    nextSong,
-    previousSong,
-    hasNext,
-    hasPrevious,
-  } = useSetlistControls()
+  const { songs } = useSetlistControls()
 
-  if (!currentSong) return null
+  if (!songs) return null
 
   return (
     <div>
-      <div className={songHeader}>
-        <div className={leftPager}>
-          <button
-            onClick={previousSong}
-            className={`${songPager} ${!hasPrevious ? disabledPager : ''}`}
-            disabled={!hasPrevious}
-          >
-            <ChevronLeft />
-          </button>
+      {songs.map((song) => (
+        <div>
+          <h2 className={songTitle}>{song.title}</h2>
+          <div className={songStyle}>
+            <BlockContent blocks={song.lyrics} />
+          </div>
         </div>
-        <h2>{currentSong.title}</h2>
-        <div className={rightPager}>
-          <button
-            onClick={nextSong}
-            className={`${songPager} ${!hasNext ? disabledPager : ''}`}
-            disabled={!hasNext}
-          >
-            <ChevronRight />
-          </button>
-        </div>
-      </div>
-      <div className={songStyle}>
-        <BlockContent blocks={currentSong.lyrics} />
-      </div>
+      ))}
     </div>
   )
 }

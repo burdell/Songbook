@@ -2,15 +2,18 @@ import { style } from '@vanilla-extract/css'
 
 import { vars } from '../App.css.js'
 
-export const setlistStyle = style({
-  marginTop: '70px',
-})
+export const setlistStyle = style({})
 
 export const songStyle = style({
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'left',
   fontSize: '1rem',
   lineHeight: 1.4,
+  paddingLeft: '0.5rem',
+})
+
+export const songTitle = style({
+  marginBottom: '0.1rem',
 })
 
 export const songHeader = style({
